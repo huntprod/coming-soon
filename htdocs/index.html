@@ -1,0 +1,104 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${THE_PAGE_TITLE}</title>
+<style type="text/css">
+body {
+  width: 100%; height: 100%;
+  padding: 0; margin: 0;
+  background: ${THE_BACKGROUND_COLOR} url(${THE_BACKGROUND_IMAGE}) no-repeat 50% 50%;
+  background-size: cover;
+  position: relative;
+  font-family: sans-serif;
+}
+body::before {
+  content: ' ';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-color: rgba(0,0,0, 0.6);
+}
+body > div {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  border-top: 2px solid ${THE_ACCENT_COLOR};
+  background-color: rgba(0,0,0, 0.8);
+  color: #ddd;
+}
+body > div > div {
+  padding: 3em;
+  max-width: 28em;
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,0) 100%);
+}
+div h1 {
+  margin: 0;
+}
+div p {
+  margin: 0;
+  padding: 1em 0;
+  line-height: 1.4em;
+}
+div form {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 28em;
+  margin: 1em auto 0 auto;
+}
+div form p,
+div form.submitted input,
+div form.submitted button {
+  display: none;
+}
+div form.submitted p {
+  display: block;
+}
+div input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  font-size: 16pt;
+  background-color: ${THE_ACCENT_COLOR};
+  color: #fff;
+  padding: 0.5em;
+  border-radius: 4pt 0 0 4pt;
+  min-width: 5em;
+}
+div button {
+  border: none;
+  outline: none;
+  font-size: 16pt;
+  padding: 0.5em;
+  background-color: ${THE_ACCENT_COLOR};
+  color: #fff;
+  border-left: 1px solid rgba(255,255,255,0.25);
+  margin-left: 1px;
+  white-space: pre;
+  border-radius: 0 4pt 4pt 0;
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelector('form').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    fetch('/register', {
+      method: 'POST',
+      body:   JSON.stringify({email: ev.target.querySelector('input').value}),
+    })
+    ev.target.setAttribute('class', 'submitted');
+  });
+});
+</script>
+</head>
+<body>
+<div><div>
+<h1>${THE_BODY_TITLE}</h1>
+<p>${THE_INTRO_TEXT}</p>
+<form>
+<p>${THE_THANKS}</p>
+<input type="text" placeholder="${THE_PLACEHOLDER}"><button>→</button>
+</form>
+</div></div>
+<!-- coming-soon! -->
+</body>
+</html>
