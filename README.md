@@ -7,9 +7,11 @@ visitors to register their interest.  Currently, this results in a
 log message with their email address, wich can be pulled from the
 container logs in a larger automation.
 
+![Screenshot of Default Deployment](screenshot.png)
+
 The following container environment variables are honored:
 
- - `THE_PAGE_TITLE` - Sets the <title> for the whole page
+ - `THE_PAGE_TITLE` - Sets the &lt;title&gt; for the whole page
 
  - `THE_BACKGROUND_COLOR` - The interim background color,
    displayed when the background image won't load.
@@ -20,9 +22,9 @@ The following container environment variables are honored:
  - `THE_ACCENT_COLOR` - The accent color used for the border
    and input / button elements.
 
- - `THE_BODY_TITLE` - The text for the <h1> in the page body.
+ - `THE_BODY_TITLE` - The text for the &lt;h1&gt; in the page body.
 
- - `THE_INTRO_TEXT` - Introductory text (contained in a <p>).
+ - `THE_INTRO_TEXT` - Introductory text (contained in a &lt;p&gt;).
 
  - `THE_PLACEDHOLER` - Sets the text field placeholder text.
 
