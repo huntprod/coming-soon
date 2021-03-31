@@ -26,6 +26,6 @@ The following container environment variables are honored:
 
  - `THE_INTRO_TEXT` - Introductory text (contained in a &lt;p&gt;).
 
- - `THE_PLACEDHOLER` - Sets the text field placeholder text.
+ - `THE_PLACEHOLDER` - Sets the text field placeholder text.
 
  - `THE_THANKS` - The message to display post-submission.
